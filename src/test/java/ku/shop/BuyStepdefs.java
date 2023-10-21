@@ -1,3 +1,4 @@
+// 6410406711 Napatsorn
 package ku.shop;
 
 import io.cucumber.java.en.Given;
@@ -31,6 +32,12 @@ public class BuyStepdefs {
     @Then("total should be {float}")
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
+    }
+// check stock
+    @Then("stock of {string} should be {int}")
+    public void stock_of_should_be(String name, int stock) {
+        Product prod = catalog.getProduct(name);
+        assertEquals(stock, prod.getStock());
     }
 }
 
